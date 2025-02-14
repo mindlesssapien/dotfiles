@@ -2,13 +2,23 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.config/.oh-my-zsh"
-#ZSH_THEME="alanpeabody"
 
-PROMPT='%F{167}ϟ%f %B%F{240}%1~ %f%b'
-# PROMPT='%F{167}∂%f %B%F{240}%1~ %f%b'
+PROMPT='%1~ $ '
 
 plugins=(git)
 
+# zsh_history
+HISTSIZE=5000
+HISTFILE=~/.cache/zsh/.zsh_history
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
